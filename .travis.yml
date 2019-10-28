@@ -1,0 +1,14 @@
+os: linux
+sudo: required
+services:
+  - docker
+arch: arm64
+script:
+  - docker build -t sfalexrog/qgc_builder .
+after_script:
+  - >
+    if [ ! -z "$TRAVIS_TAG" ]; then
+      echo "$DOCKER_PASS" | docker login -u="DOCKER_USER" --password-stdin
+      docker tag sfalexrog/qgc_builder sfalexrog/qgc_builder:${TRAVIS_TAG}
+      docker push sfalexrog/qgc_builder:${TRAVIS_TAG}
+    fi
