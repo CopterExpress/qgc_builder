@@ -10,7 +10,7 @@ script:
 after_script:
   - >
     if [ ! -z "$TRAVIS_TAG" ]; then
-      echo "$DOCKER_PASS" | docker login -u="DOCKER_USER" --password-stdin
+      echo "$DOCKER_PASS" | docker login -u="$DOCKER_USER" --password-stdin
       docker tag sfalexrog/qgc_builder sfalexrog/qgc_builder:${TRAVIS_TAG}
       docker push sfalexrog/qgc_builder:${TRAVIS_TAG}
     fi
