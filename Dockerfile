@@ -39,3 +39,26 @@ RUN mkdir -p /build_dep \
   && make install \
   && cd / \
   && rm -rf /build_dep
+
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends \
+    libqt5quickcontrols2-5 \
+    libqt5quicktemplates2-5 \
+    libqt5quickwidgets5 \
+    libqt5serialport5 \
+    libqt5sql5 \
+    libqt5svg5 \
+    libqt5test5 \
+    libqt5widgets5 \
+    libqt5gui5 \
+    libqt5xml5 \
+    libqt5texttospeech5 \
+    libqt5network5 \
+    libqt5location5-plugins \
+    qt5-image-formats-plugins \
+    qtvirtualkeyboard-plugin \
+    qtwayland5 \
+    libqt5positioning5-plugins \
+    libqt5sql5-sqlite \
+    qtspeech5-speechd-plugin \
+  && rm -rf /var/lib/apt/lists
