@@ -61,4 +61,16 @@ RUN apt-get update \
     libqt5positioning5-plugins \
     libqt5sql5-sqlite \
     qtspeech5-speechd-plugin \
+    qml-module-qtquick2 \
+    qml-module-qtquick-window2 \
+    qml-module-qtquick-dialogs \
+    qml-module-qtquick-controls2 \
+    qml-module-qt-labs-calendar \
+    qml-module-qt-labs-folderlistmodel \
+    qml-module-qt-labs-handlers \
+    qml-module-qt-labs-location \
+    qml-module-qt-labs-platform \
+    qml-module-qt-labs-settings \
+    qml-module-qt-labs-sharedimage \
+    qml-module-qtqml-models2 \
   && rm -rf /var/lib/apt/lists
