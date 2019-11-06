@@ -61,10 +61,6 @@ RUN apt-get update \
     libqt5positioning5-plugins \
     libqt5sql5-sqlite \
     qtspeech5-speechd-plugin \
-    qml-module-qtquick2 \
-    qml-module-qtquick-window2 \
-    qml-module-qtquick-dialogs \
-    qml-module-qtquick-controls2 \
     qml-module-qt-labs-calendar \
     qml-module-qt-labs-folderlistmodel \
     qml-module-qt-labs-handlers \
@@ -73,4 +69,32 @@ RUN apt-get update \
     qml-module-qt-labs-settings \
     qml-module-qt-labs-sharedimage \
     qml-module-qtqml-models2 \
+    qml-module-qt3d \
+    qml-module-bluetooth \
+    qml-module-qtcharts \
+    qml-module-qtgraphicaleffects \
+    qml-module-qtmultimedia \
+    qml-module-qtnfc \
+    qml-module-qtqml-statemachine \
+    qml-module-qtquick2 \
+    qml-module-qtquick-controls \
+    qml-module-qtquick-controls2 \
+    qml-module-qtquick-dialogs \
+    qml-module-qtquick-extras \
+    qml-module-qtquick-layouts \
+    qml-module-qtquick-localstorage \
+    qml-module-qtquick-particles2 \
+    qml-module-qtquick-privatewidgets \
+    qml-module-qtquick-scene2d \
+    qml-module-qtquick-scene3d \
+    qml-module-qtquick-shapes \
+    qml-module-qtquick-templates2 \
+    qml-module-qtquick-virtualkeyboard \
+    qml-module-qtquick-window2 \
+    qml-module-qtquick-xmllistmodel \
+    qml-module-qtsensors \
+    qml-module-qttest \
+    qml-module-qtwayland-compositor \
+    qml-module-qtwebchannel \
+    qml-module-qtwebsockets \
   && rm -rf /var/lib/apt/lists
