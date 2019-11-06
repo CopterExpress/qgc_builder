@@ -70,7 +70,7 @@ RUN apt-get update \
     qml-module-qt-labs-sharedimage \
     qml-module-qtqml-models2 \
     qml-module-qt3d \
-    qml-module-bluetooth \
+    qml-module-qtbluetooth \
     qml-module-qtcharts \
     qml-module-qtgraphicaleffects \
     qml-module-qtmultimedia \
