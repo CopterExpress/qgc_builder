@@ -1,0 +1,100 @@
+FROM arm64v8/debian:buster-20191118
+
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends \
+    libudev-dev \
+    libinput-dev \
+    libts-dev \
+    libxcb-xinerama0-dev \
+    speech-dispatcher \
+    libsdl2-dev \
+    libgstreamer-plugins-base1.0-dev \
+    qt5-default \
+    qtbase5-private-dev \
+    qtbase5-dev \
+    qtbase5-dev-tools \
+    libqt5texttospeech5-dev \
+    libqt5svg5-dev \
+    libqt5opengl5-dev \
+    qtmultimedia5-dev \
+    libqt5serialbus5-dev \
+    libqt5charts5-dev \
+    libqt5serialport5-dev \
+    qtdeclarative5-private-dev \
+    qttools5-private-dev \
+    libssl-dev \
+    libgstreamer-plugins-base1.0-dev \
+    git \
+    build-essential \
+  && rm -rf /var/lib/apt/lists
+
+RUN mkdir -p /build_dep \
+  && cd /build_dep \
+  && git clone https://github.com/qt/qtlocation.git -b v5.11.3 --depth 1 \
+  && cd qtlocation \
+  && mkdir build \
+  && cd build \
+  && qmake ../qtlocation.pro \
+  && make -j2 \
+  && make install \
+  && cd / \
+  && rm -rf /build_dep
+
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends \
+    libqt5quickcontrols2-5 \
+    libqt5quicktemplates2-5 \
+    libqt5quickwidgets5 \
+    libqt5serialport5 \
+    libqt5sql5 \
+    libqt5svg5 \
+    libqt5test5 \
+    libqt5widgets5 \
+    libqt5gui5 \
+    libqt5xml5 \
+    libqt5texttospeech5 \
+    libqt5network5 \
+    libqt5location5-plugins \
+    qt5-image-formats-plugins \
+    qtvirtualkeyboard-plugin \
+    qtwayland5 \
+    libqt5positioning5-plugins \
+    libqt5sql5-sqlite \
+    qtspeech5-speechd-plugin \
+    qml-module-qt-labs-calendar \
+    qml-module-qt-labs-folderlistmodel \
+    qml-module-qt-labs-handlers \
+    qml-module-qt-labs-location \
+    qml-module-qt-labs-platform \
+    qml-module-qt-labs-settings \
+    qml-module-qt-labs-sharedimage \
+    qml-module-qtqml-models2 \
+    qml-module-qt3d \
+    qml-module-qtbluetooth \
+    qml-module-qtcharts \
+    qml-module-qtgraphicaleffects \
+    qml-module-qtmultimedia \
+    qml-module-qtnfc \
+    qml-module-qtqml-statemachine \
+    qml-module-qtquick2 \
+    qml-module-qtquick-controls \
+    qml-module-qtquick-controls2 \
+    qml-module-qtquick-dialogs \
+    qml-module-qtquick-extras \
+    qml-module-qtquick-layouts \
+    qml-module-qtquick-localstorage \
+    qml-module-qtquick-particles2 \
+    qml-module-qtquick-privatewidgets \
+    qml-module-qtquick-scene2d \
+    qml-module-qtquick-scene3d \
+    qml-module-qtquick-shapes \
+    qml-module-qtquick-templates2 \
+    qml-module-qtquick-virtualkeyboard \
+    qml-module-qtquick-window2 \
+    qml-module-qtquick-xmllistmodel \
+    qml-module-qtsensors \
+    qml-module-qttest \
+    qml-module-qtwayland-compositor \
+    qml-module-qtwebchannel \
+    qml-module-qtwebsockets \
+  && rm -rf /var/lib/apt/lists
