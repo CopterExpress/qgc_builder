@@ -14,6 +14,6 @@ after_script:
   - >
     if [ ! -z "$TRAVIS_TAG" ]; then
       echo "$DOCKER_PASS" | docker login -u="$DOCKER_USER" --password-stdin
-      docker tag sfalexrog/qgc_builder sfalexrog/qgc_builder:${TRAVIS_TAG}-${BASE}
-      docker push sfalexrog/qgc_builder:${TRAVIS_TAG}-${BASE}
+      docker tag sfalexrog/qgc_builder copterexpress/qgc_builder:${TRAVIS_TAG}-${BASE}
+      docker push copterexpress/qgc_builder:${TRAVIS_TAG}-${BASE}
     fi
