@@ -26,6 +26,7 @@ RUN apt-get update \
     libgstreamer-plugins-base1.0-dev \
     git \
     build-essential \
+    ca-certificates \
   && rm -rf /var/lib/apt/lists
 
 RUN mkdir -p /build_dep \
